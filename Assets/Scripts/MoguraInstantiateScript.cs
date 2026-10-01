@@ -25,8 +25,6 @@ public class MoguraInstantiateScript : MonoBehaviour
             Instantiate(moguras[i], new Vector3(points[i].transform.position.x, points[i].transform.position.y, 0), transform.rotation);
 
             moguras[i] = null;
-
-            Debug.Log(i);
         }
     }
 }
