@@ -1,12 +1,12 @@
 using UnityEngine;
 
-using System.Collections; // ← ６）これを追加(or確認)
+using System.Collections; // 
 
  
 public class GameManager : MonoBehaviour
 {
     //１）変数を準備
-    private CardScript first, second; // 1枚目と2枚目
+    private EnemyJudgeScript first, second; // 1枚目と2枚目
     private int matchedPairs = 0; // 揃ったペア数
     private int totalPairs = 2; // 今回は4枚なので2ペア
     private bool gameClear = false; //ゲームクリアしたらtrue
@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
     }
 
     //４）カードがめくられた処理
-    public void OnCardOpened(CardScript cs)
+    public void OnCardOpened(EnemyJudgeScript cs)
     {
         //１枚目がめくられる
         if (first == null)
@@ -52,31 +52,31 @@ public class GameManager : MonoBehaviour
 
             //７）判定処理へ...
             //コルーチンは 作業を途中で止めたり、待ったりしながら進められる特別な関数
-            StartCoroutine(Judgement());
+            //StartCoroutine(Judgement());
         }
     }
 
-    //５）判定の関数
-    IEnumerator Judgement()
-    {
-        //コルーチンの処理を 0.3 秒だけ中断して、時間が経ったら続きから再開する
-        yield return new WaitForSeconds(0.3f);
+    ////５）判定の関数
+    //IEnumerator Judgement()
+    //{
+    //    //コルーチンの処理を 0.3 秒だけ中断して、時間が経ったら続きから再開する
+    //    yield return new WaitForSeconds(0.3f);
 
-        //ペアが成立した場合
-        if (first.pairId == second.pairId)
-        {
-            first.ShowFront();
-            second.ShowFront();
-            matchedPairs++; //１加算
-        }
-        else
-        {
-            //さらに0.5秒中断
-            yield return new WaitForSeconds(0.5f);
-            first.ShowBack();
-            second.ShowBack();
-        }
-        first = null;
-        second = null;
-    }
+    //    //ペアが成立した場合
+    //    if (first.pairId == second.pairId)
+    //    {
+    //        first.ShowFront();
+    //        second.ShowFront();
+    //        matchedPairs++; //１加算
+    //    }
+    //    else
+    //    {
+    //        //さらに0.5秒中断
+    //        yield return new WaitForSeconds(0.5f);
+    //        first.ShowBack();
+    //        second.ShowBack();
+    //    }
+    //    first = null;
+    //    second = null;
+    //}
 }

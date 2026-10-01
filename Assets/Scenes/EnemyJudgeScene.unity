@@ -183,7 +183,7 @@ MonoBehaviour:
   - {fileID: 6208456996931456044, guid: f72f480f706c42a48889a0d5e9d8aaad, type: 3}
   - {fileID: 6208456996931456044, guid: f72f480f706c42a48889a0d5e9d8aaad, type: 3}
   - {fileID: 6731574144585021310, guid: 59579103c79fcdd45913f4e1c5f4d1a3, type: 3}
-  - {fileID: 8015118151704907308, guid: 3a2b4ac610b92994b9f4a55bb7015ddf, type: 3}
+  - {fileID: 6731574144585021310, guid: 59579103c79fcdd45913f4e1c5f4d1a3, type: 3}
   - {fileID: 986224779701799773, guid: c079ae0c88bc5f347bee0b08a92f5a8a, type: 3}
   - {fileID: 6506358897518026574, guid: f072b140539a1464d91a4edfb22f5697, type: 3}
   - {fileID: 803820263903239256, guid: 33c6099be1c614c458c0d7aa22b365de, type: 3}
@@ -484,6 +484,50 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 102993111}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &754459181
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 754459183}
+  - component: {fileID: 754459182}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &754459182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754459181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d47b84318a455b041b1ffb167fb722b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManagerScript
+--- !u!4 &754459183
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754459181}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -127.62814, y: -52.933, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &809585606
 GameObject:
@@ -790,6 +834,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 409b7e4513fea41418e1fe9371375cb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TouchDeleteScript
+  imgBack: {fileID: 0}
+  imgFront: {fileID: 0}
+  gm: {fileID: 0}
+  pairId: 0
 --- !u!1 &1365378406
 GameObject:
   m_ObjectHideFlags: 0
@@ -1169,3 +1217,4 @@ SceneRoots:
   - {fileID: 1196196984}
   - {fileID: 102993111}
   - {fileID: 28236459}
+  - {fileID: 754459183}
