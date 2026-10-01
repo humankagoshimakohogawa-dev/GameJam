@@ -1,5 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+//using UnityEngine.SceneManagement;
+
+    
 
 public class EnemyJudgeScript: MonoBehaviour
 {    //１）変数関連
@@ -40,8 +43,10 @@ public class EnemyJudgeScript: MonoBehaviour
                 {
                     SelectEnemy(currentTarget);
                 }
+                
             }
         }
+       // GameClear();
     }
 
     void SelectEnemy(GameObject enemy)
@@ -90,5 +95,14 @@ public class EnemyJudgeScript: MonoBehaviour
             firstClickedObject = null;
         }
     }
+    //private void GameClear()
+    //{
+    //    if (!gameClear && matchedPairs == totalPairs)
+    //    {
+    //        gameClear = true;
+    //        Debug.Log("CLEAR!");
+    //    }
+
+    //}
 }
 
