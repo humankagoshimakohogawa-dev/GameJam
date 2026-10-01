@@ -9,8 +9,11 @@ public class GameManager : MonoBehaviour
     //１）変数を準備
     private EnemyJudgeScript first, second; // 1枚目と2枚目
     private int matchedPairs = 0; // 揃ったペア数
-    private int totalPairs = 12; 
+    private int totalPairs = 0; 
     private bool gameClear = false; //ゲームクリアしたらtrue
+    private bool isLocking = false; //操作ロック用
+
+    private bool isSetupCompleted = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,6 +22,10 @@ public class GameManager : MonoBehaviour
         first = null; //まだ何も入ってない（めくってない）
         second = null;
         matchedPairs = 0;
+        gameClear = false;
+        isLocking = false;
+        isSetupCompleted = false;
+        totalPairs = 0;
 
         Debug.Log("ゲームスタート！");
     }
