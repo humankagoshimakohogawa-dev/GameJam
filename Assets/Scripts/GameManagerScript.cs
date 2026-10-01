@@ -2,7 +2,8 @@ using UnityEngine;
 
 using System.Collections; // 
 
- 
+using UnityEngine.SceneManagement;
+
 public class GameManager : MonoBehaviour
 {
     //１）変数を準備
@@ -34,7 +35,7 @@ public class GameManager : MonoBehaviour
             gameClear = true;
             Debug.Log("CLEAR!");
         }
-
+        //SceneManager.LoadScene("ResultSceneScene");
     }
 
     //４）カードがめくられた処理
