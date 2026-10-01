@@ -81,6 +81,11 @@ public class EnemyJudgeScript: MonoBehaviour
             {
                 Debug.Log("2つ揃いました！消去します。");
 
+                GameManager gm = FindAnyObjectByType<GameManager>();
+                if (gm != null)
+                {
+                    gm.OnPairMatched(); // GameManager側で用意する関数を呼び出す
+                }
                 // 両方とも削除する
                 Destroy(firstClickedObject);
                 Destroy(enemy);
