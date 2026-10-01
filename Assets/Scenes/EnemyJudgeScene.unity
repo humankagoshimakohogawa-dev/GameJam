@@ -181,7 +181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MoguraInstantiateScript
   moguras:
   - {fileID: 6208456996931456044, guid: f72f480f706c42a48889a0d5e9d8aaad, type: 3}
-  - {fileID: 673077076168045102, guid: 42ba411a8bd5f964db9c48c2262632c9, type: 3}
+  - {fileID: 6208456996931456044, guid: f72f480f706c42a48889a0d5e9d8aaad, type: 3}
   - {fileID: 6731574144585021310, guid: 59579103c79fcdd45913f4e1c5f4d1a3, type: 3}
   - {fileID: 8015118151704907308, guid: 3a2b4ac610b92994b9f4a55bb7015ddf, type: 3}
   - {fileID: 986224779701799773, guid: c079ae0c88bc5f347bee0b08a92f5a8a, type: 3}
