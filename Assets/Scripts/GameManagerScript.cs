@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     //１）変数を準備
     private EnemyJudgeScript first, second; // 1枚目と2枚目
     private int matchedPairs = 0; // 揃ったペア数
-    private int totalPairs = 2; 
+    private int totalPairs = 12; 
     private bool gameClear = false; //ゲームクリアしたらtrue
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -30,12 +30,19 @@ public class GameManager : MonoBehaviour
         // 1. まだクリアしていない  ←この直後にクリアするので、直前ではクリアしてない状態です
         // 2. 全部のペアが揃った
         // この2つが同時に成立したとき
-        if (!gameClear && matchedPairs == totalPairs)
+        if (matchedPairs > 0)
         {
-            gameClear = true;
-            Debug.Log("CLEAR!");
+            if (matchedPairs == totalPairs)//!gameClear && 
+            {
+
+                gameClear = false;
+                Debug.Log("CLEAR!");
+
+                SceneManager.LoadScene("ResultScene");
+            }
+            
         }
-        //SceneManager.LoadScene("ResultSceneScene");
+
     }
 
     //４）カードがめくられた処理
