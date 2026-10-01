@@ -10,13 +10,13 @@ public class EnemyJudgeScript: MonoBehaviour
 
    // ２）準備
     private SpriteRenderer sr; //画像表示に関する
-    private bool isFront = false;//裏表判定（false=裏, true=表）
+    //private bool isFront = false;//裏表判定（false=裏, true=表）
 
   //  Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
        // ３）実行
-        sr = GetComponent<SpriteRenderer>(); //（カードの）画像情報に関する
+        sr = GetComponent<SpriteRenderer>(); //画像情報に関する
         //ShowBack(); //最初は裏にセット⇒中身は４へ
     }
     //最初にクリックした敵を記憶しておく変数
