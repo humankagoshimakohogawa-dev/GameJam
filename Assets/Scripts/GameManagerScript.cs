@@ -43,16 +43,26 @@ public class GameManager : MonoBehaviour
             CheckInstantiateCompletion();
             return; // 枚数が確定するまでは、下のクリア判定は走らせない
         }
-
         if (!gameClear && matchedPairs == totalPairs)
         {
             gameClear = true;
-            Debug.Log("CLEAR!");
-            SceneManager.LoadScene("ResultSceneScene");
+            Debug.Log(" 全部のモグラが消えました！クリア画面へ遷移します。");
+            SceneManager.LoadScene("ResultScene"); // ←実際のシーン名に合わせてください
         }
+        //if (!gameClear && matchedPairs == totalPairs)
+        //{
+        //    gameClear = true;
+        //    Debug.Log("CLEAR!");
+        //    SceneManager.LoadScene("ResultSceneScene");
+        //}
         //
     }
 
+    public void OnPairMatched()
+    {
+        matchedPairs++;
+        Debug.Log("カウント増加！現在の進捗: {matchedPairs} / {totalPairs}");
+    }
     // 生成スクリプトを外から監視して、終わったらペア数を自動計算する関数
     void CheckInstantiateCompletion()
     {
