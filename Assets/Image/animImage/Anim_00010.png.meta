@@ -129,11 +129,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 740
-        width: 190
-        height: 155
+        y: 0
+        width: 448
+        height: 447
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -150,12 +150,12 @@ TextureImporter:
       name: Anim_00010_1
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 448
-        width: 449
-        height: 406
+        width: 450
+        height: 451
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -172,12 +172,12 @@ TextureImporter:
       name: Anim_00010_2
       rect:
         serializedVersion: 2
-        x: 450
+        x: 1349
         y: 448
-        width: 1347
-        height: 429
+        width: 448
+        height: 451
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -194,12 +194,12 @@ TextureImporter:
       name: Anim_00010_3
       rect:
         serializedVersion: 2
-        x: 456
-        y: 740
-        width: 166
-        height: 155
+        x: 448
+        y: 0
+        width: 453
+        height: 448
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -216,12 +216,12 @@ TextureImporter:
       name: Anim_00010_4
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1348
         y: 0
-        width: 1797
-        height: 447
+        width: 449
+        height: 446
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -234,11 +234,77 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Anim_00010_5
+      rect:
+        serializedVersion: 2
+        x: 901
+        y: 0
+        width: 447
+        height: 448
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f22997110a4e889488dacba52e87dca1
+      internalID: -1756853055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anim_00010_6
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 447
+        width: 448
+        height: 452
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca42a108e5f4e664ca61b1e4f0507c7e
+      internalID: -2137583151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anim_00010_7
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 448
+        width: 449
+        height: 451
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c68c99d7d6f1d284a8f1f2ab884912ae
+      internalID: 1610443491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 72139d1b26e586e4da10c360368433f0
     internalID: 0
     vertices: []
     indices: 
@@ -253,6 +319,9 @@ TextureImporter:
       Anim_00010_2: 2672552369323608385
       Anim_00010_3: 2201254229381155274
       Anim_00010_4: 3930870866545712639
+      Anim_00010_5: -1756853055
+      Anim_00010_6: -2137583151
+      Anim_00010_7: 1610443491
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

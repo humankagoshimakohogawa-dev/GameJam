@@ -121,10 +121,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 448
-        width: 1797
-        height: 447
+        width: 448
+        height: 451
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -143,10 +143,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1797
-        height: 447
+        width: 448
+        height: 448
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -159,11 +159,143 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Anim_00014_2
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 448
+        width: 453
+        height: 451
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fab85c4e84748364baec66f7ff979b08
+      internalID: 454394571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anim_00014_3
+      rect:
+        serializedVersion: 2
+        x: 902
+        y: 451
+        width: 451
+        height: 448
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48dedd977b40eac43829e784cfbe3bf8
+      internalID: -1072782040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anim_00014_4
+      rect:
+        serializedVersion: 2
+        x: 1353
+        y: 448
+        width: 444
+        height: 451
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4944a5d7b5295084abc4880f6d260cba
+      internalID: 1194382339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anim_00014_5
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 2
+        width: 449
+        height: 445
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d61ff1485ed1ea643bbdc6b5a5e0340f
+      internalID: 724143065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anim_00014_6
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 0
+        width: 450
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54931d5b19af2f7488f30087fd8e40b0
+      internalID: -1310811097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anim_00014_7
+      rect:
+        serializedVersion: 2
+        x: 1348
+        y: 0
+        width: 449
+        height: 447
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46270dc2a6ab4234e94fc71648f5adb1
+      internalID: -500292324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 25c29b47b38684c44b91f8c2f33a2bfb
     internalID: 0
     vertices: []
     indices: 
@@ -175,6 +307,12 @@ TextureImporter:
     nameFileIdTable:
       Anim_00014_0: 5844364401501232353
       Anim_00014_1: -4797280626010910638
+      Anim_00014_2: 454394571
+      Anim_00014_3: -1072782040
+      Anim_00014_4: 1194382339
+      Anim_00014_5: 724143065
+      Anim_00014_6: -1310811097
+      Anim_00014_7: -500292324
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
