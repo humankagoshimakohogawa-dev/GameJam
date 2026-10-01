@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     //１）変数を準備
     private EnemyJudgeScript first, second; // 1枚目と2枚目
     private int matchedPairs = 0; // 揃ったペア数
-    private int totalPairs = 2; // 今回は4枚なので2ペア
+    private int totalPairs = 2; 
     private bool gameClear = false; //ゲームクリアしたらtrue
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
             gameClear = true;
             Debug.Log("CLEAR!");
         }
+
     }
 
     //４）カードがめくられた処理
