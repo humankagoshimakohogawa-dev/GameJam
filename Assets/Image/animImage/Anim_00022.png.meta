@@ -137,9 +137,9 @@ TextureImporter:
         x: 0
         y: 154
         width: 155
-        height: 140
+        height: 154
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -156,12 +156,12 @@ TextureImporter:
       name: Anim_00022_1
       rect:
         serializedVersion: 2
-        x: 154
+        x: 155
         y: 154
-        width: 155
-        height: 140
+        width: 154
+        height: 154
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -178,12 +178,12 @@ TextureImporter:
       name: Anim_00022_2
       rect:
         serializedVersion: 2
-        x: 308
+        x: 309
         y: 154
-        width: 155
-        height: 140
+        width: 154
+        height: 154
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -200,12 +200,12 @@ TextureImporter:
       name: Anim_00022_3
       rect:
         serializedVersion: 2
-        x: 462
+        x: 463
         y: 154
-        width: 154
-        height: 140
+        width: 153
+        height: 154
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -225,9 +225,9 @@ TextureImporter:
         x: 0
         y: 0
         width: 155
-        height: 140
+        height: 154
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -244,12 +244,12 @@ TextureImporter:
       name: Anim_00022_5
       rect:
         serializedVersion: 2
-        x: 154
+        x: 155
         y: 0
-        width: 155
-        height: 140
+        width: 154
+        height: 154
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -266,12 +266,12 @@ TextureImporter:
       name: Anim_00022_6
       rect:
         serializedVersion: 2
-        x: 308
+        x: 309
         y: 0
-        width: 155
-        height: 140
+        width: 154
+        height: 155
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -288,7 +288,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 0c37278094fabba4ba6479c28d8f82c5
     internalID: 0
     vertices: []
     indices: 

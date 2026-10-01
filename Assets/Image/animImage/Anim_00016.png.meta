@@ -137,37 +137,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Anim_00016_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 448
-        width: 1797
-        height: 409
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d52fc6fe0ca5bb5a0800000000000000
-      internalID: -6504505452109434275
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Anim_00016_1
       rect:
         serializedVersion: 2
-        x: 6
-        y: 740
-        width: 167
-        height: 155
+        x: 0
+        y: 446
+        width: 451
+        height: 453
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -189,7 +167,7 @@ TextureImporter:
         width: 15
         height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -206,12 +184,12 @@ TextureImporter:
       name: Anim_00016_3
       rect:
         serializedVersion: 2
-        x: 448
-        y: 740
-        width: 193
-        height: 154
+        x: 452
+        y: 446
+        width: 449
+        height: 453
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -233,7 +211,7 @@ TextureImporter:
         width: 15
         height: 11
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -250,12 +228,12 @@ TextureImporter:
       name: Anim_00016_5
       rect:
         serializedVersion: 2
-        x: 906
-        y: 740
-        width: 166
-        height: 154
+        x: 900
+        y: 447
+        width: 449
+        height: 452
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -277,7 +255,7 @@ TextureImporter:
         width: 15
         height: 11
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -294,12 +272,12 @@ TextureImporter:
       name: Anim_00016_7
       rect:
         serializedVersion: 2
-        x: 1355
-        y: 740
-        width: 184
-        height: 154
+        x: 1349
+        y: 447
+        width: 448
+        height: 452
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -321,7 +299,7 @@ TextureImporter:
         width: 14
         height: 11
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -338,7 +316,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 1d3e44f12297f7f41ba2d799108a867b
     internalID: 0
     vertices: []
     indices: 

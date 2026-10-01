@@ -123,11 +123,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 153
-        width: 616
-        height: 142
+        y: 151
+        width: 155
+        height: 157
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -146,10 +146,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 309
-        height: 141
+        width: 155
+        height: 151
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -169,9 +169,9 @@ TextureImporter:
         x: 308
         y: 0
         width: 155
-        height: 141
+        height: 151
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -184,11 +184,99 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Anim_00028_3
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 151
+        width: 153
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e6a69d54713d7e43b1457f2a9897d4a
+      internalID: 786165006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anim_00028_4
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 151
+        width: 155
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f845632eb6552d4aa1d9b170604fa87
+      internalID: -1655184106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anim_00028_5
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 151
+        width: 153
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05999bc78eb23b543b9e42f4b745ac15
+      internalID: -1829075500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Anim_00028_6
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 0
+        width: 153
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 145cbab9a6368d54cbccb63a6608c197
+      internalID: -200385923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: ae830169284da8c47bf500079b0dfd68
     internalID: 0
     vertices: []
     indices: 
@@ -201,6 +289,10 @@ TextureImporter:
       Anim_00028_0: 9035532926520210349
       Anim_00028_1: 4668166902253503199
       Anim_00028_2: -1710083412987472241
+      Anim_00028_3: 786165006
+      Anim_00028_4: -1655184106
+      Anim_00028_5: -1829075500
+      Anim_00028_6: -200385923
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
