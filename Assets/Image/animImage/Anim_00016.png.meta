@@ -159,28 +159,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Anim_00016_2
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 848
-        width: 15
-        height: 12
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e1b779980282bb650800000000000000
-      internalID: 6249633028119165726
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Anim_00016_3
       rect:
         serializedVersion: 2
@@ -198,28 +176,6 @@ TextureImporter:
       bones: []
       spriteID: bf31c10825b5cb2c0800000000000000
       internalID: -4414553124835159045
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Anim_00016_4
-      rect:
-        serializedVersion: 2
-        x: 690
-        y: 848
-        width: 15
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e8f698ef5fa7e1e10800000000000000
-      internalID: 2170307267395153806
       vertices: []
       indices: 
       edges: []
@@ -247,28 +203,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Anim_00016_6
-      rect:
-        serializedVersion: 2
-        x: 1139
-        y: 848
-        width: 15
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 17a1f27cfa49e9cd0800000000000000
-      internalID: -2549436856363181455
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Anim_00016_7
       rect:
         serializedVersion: 2
@@ -286,28 +220,6 @@ TextureImporter:
       bones: []
       spriteID: 7dd39e22a01869720800000000000000
       internalID: 2852609294521155031
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Anim_00016_8
-      rect:
-        serializedVersion: 2
-        x: 1589
-        y: 848
-        width: 14
-        height: 11
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: dc4ef2df081d6a7c0800000000000000
-      internalID: -4060327662094129971
       vertices: []
       indices: 
       edges: []
