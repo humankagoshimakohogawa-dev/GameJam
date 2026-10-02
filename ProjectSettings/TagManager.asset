@@ -5,7 +5,18 @@ TagManager:
   serializedVersion: 3
   tags:
   - card1
-  - Enemy
+  - mogura0
+  - mogura1
+  - mogura2
+  - mogura3
+  - mogura4
+  - mogura5
+  - mogura6
+  - mogura7
+  - mogura8
+  - mogura9
+  - mogura10
+  - mogura11
   layers:
   - Default
   - TransparentFX
