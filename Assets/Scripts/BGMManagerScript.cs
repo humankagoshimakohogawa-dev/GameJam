@@ -1,3 +1,4 @@
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,12 +8,19 @@ public class BGMManagerScript : MonoBehaviour
     [SerializeField] AudioClip titleBgmClip;
     [SerializeField] AudioClip gameBgmClip;
     [SerializeField] AudioClip resultBgmClip;
+
+    [Header("効果音")]
     [SerializeField] AudioClip clickButtonClip;
     [SerializeField] AudioClip moleClickClip;
     [SerializeField] AudioClip missClip;
     [SerializeField] AudioClip trueClickClip;
 
+    // BGMを再生するAudioSource
     AudioSource bgmSource;
+
+    // 効果音を再生するAudioSource
+    AudioSource seSource;
+
 
     //=============================================================================================
     void Awake()
@@ -20,128 +28,185 @@ public class BGMManagerScript : MonoBehaviour
         // シーンが切り替わってもこのオブジェクトを破棄しない
         DontDestroyOnLoad(this.gameObject);
 
-        // AudioSource型の配列 sourcesを宣言
-        // AudioSourceの内容を取得してsourcesに入れる
+        // AudioSourceを取得
         AudioSource[] sources = GetComponents<AudioSource>();
 
-        // 三項演算子
-        // 変数名 = 条件式 ? trueだった場合の値 : falseだった場合の値
+        // 1つ目のAudioSourceをBGM用にする
+        bgmSource = sources.Length > 0
+            ? sources[0]
+            : gameObject.AddComponent<AudioSource>();
 
-        // bgmSourceに、sourcesの長さ(Length)が0より大きいならsourcesの0番を与える  そうでなければゲームオブジェクトにAudioSourceのコンポーネントを追加
-        bgmSource = sources.Length > 0 ? sources[0] : gameObject.AddComponent<AudioSource>();
+        // 2つ目のAudioSourceを効果音用にする
+        seSource = sources.Length > 1
+            ? sources[1]
+            : gameObject.AddComponent<AudioSource>();
 
-        // bgmのループ再生をtrueに
+        // BGMはループする
         bgmSource.loop = true;
 
+        // 効果音はループしない
+        seSource.loop = false;
     }
+
 
     //=============================================================================================
     void Start()
     {
-        // 現在のシーンがタイトルならタイトル用BGMを再生
+        // 現在のシーンがタイトルならタイトルBGMを再生
         if (SceneManager.GetActiveScene().name == "TitleScene")
-        { PlayTitleBGM(); }
-
+        {
+            PlayTitleBGM();
+        }
     }
+
 
     //=============================================================================================
     void Update()
     {
-        // 現在のシーンがゲーム本編なら再生するBGMをゲーム本編用に切り替え
+        // 現在のシーンがゲーム本編ならゲームBGMに切り替える
         if (SceneManager.GetActiveScene().name == "GameScene")
-        { PlayGameBGM(); }
+        {
+            PlayGameBGM();
+        }
 
-        // 現在のシーンがリザルトなら再生するBGMをリザルト用に切り替え
+        // 現在のシーンがリザルトならリザルトBGMに切り替える
         if (SceneManager.GetActiveScene().name == "ResultScene")
-        { PlayResultBGM(); }
+        {
+            PlayResultBGM();
+        }
     }
 
-    //=======================================================================================================================
+
+    //=============================================================================================
     // タイトル用BGM再生
     public void PlayTitleBGM()
     {
-        // titleBgmClipに何も格納されていなかったら処理を実行しない
-        if (titleBgmClip == null) { return; }
+        // BGMが設定されていなければ何もしない
+        if (titleBgmClip == null)
+        {
+            return;
+        }
+
+        // 既にタイトルBGMなら何もしない
+        if (bgmSource.clip == titleBgmClip)
+        {
+            return;
+        }
 
         bgmSource.clip = titleBgmClip;
-
         bgmSource.Play();
 
         Debug.Log("タイトルBGM再生");
     }
 
-    //=======================================================================================================================
+
+    //=============================================================================================
     // ゲームシーン用BGM再生
     public void PlayGameBGM()
     {
-        // titleBgmClipに何も格納されていない、または既にゲーム用bgmが格納されているなら処理を実行しない
-        if (gameBgmClip == null || bgmSource.clip == gameBgmClip) { return; }
+        // BGMが設定されていなければ何もしない
+        if (gameBgmClip == null)
+        {
+            return;
+        }
+
+        // 既にゲームBGMなら何もしない
+        if (bgmSource.clip == gameBgmClip)
+        {
+            return;
+        }
 
         bgmSource.clip = gameBgmClip;
-
         bgmSource.Play();
 
         Debug.Log("ゲームBGM再生");
     }
 
-    //=======================================================================================================================
+
+    //=============================================================================================
     // リザルトシーン用BGM再生
     public void PlayResultBGM()
     {
-        // resultBgmClipに何も格納されていない、または既にリザルト用bgmが格納されているなら処理を実行しない
-        if (resultBgmClip == null || bgmSource.clip == resultBgmClip) { return; }
+        // BGMが設定されていなければ何もしない
+        if (resultBgmClip == null)
+        {
+            return;
+        }
+
+        // 既にリザルトBGMなら何もしない
+        if (bgmSource.clip == resultBgmClip)
+        {
+            return;
+        }
 
         bgmSource.clip = resultBgmClip;
-
         bgmSource.Play();
 
         Debug.Log("リザルトBGM再生");
     }
 
-    public void PlayClickButtonBGM()
+
+    //=============================================================================================
+    // ボタンを押したときの効果音
+    public void PlayClickButtonSound()
     {
-        // resultBgmClipに何も格納されていない、または既にリザルト用bgmが格納されているなら処理を実行しない
-        if (clickButtonClip == null || bgmSource.clip == clickButtonClip) { return; }
+        // 効果音が設定されていなければ何もしない
+        if (clickButtonClip == null)
+        {
+            return;
+        }
 
-        bgmSource.clip = clickButtonClip;
-
-        bgmSource.Play();
+        seSource.PlayOneShot(clickButtonClip);
 
         Debug.Log("ボタンがクリックされました。");
     }
 
-    public void PlayMoleClickBGM()
+
+    //=============================================================================================
+    // モグラを押したときの効果音
+    public void PlayMoleClickSound()
     {
-        // resultBgmClipに何も格納されていない、または既にリザルト用bgmが格納されているなら処理を実行しない
-        if (moleClickClip == null || bgmSource.clip == moleClickClip) { return; }
+        // 効果音が設定されていなければ何もしない
+        if (moleClickClip == null)
+        {
+            return;
+        }
 
-        bgmSource.clip = moleClickClip;
-
-        bgmSource.Play();
+        seSource.PlayOneShot(moleClickClip);
 
         Debug.Log("モグラの穴をたたきました。");
     }
-    public void PlayMissBGM()
+
+
+    //=============================================================================================
+    // 不正解の効果音
+    public void PlayMissSound()
     {
-        // resultBgmClipに何も格納されていない、または既にリザルト用bgmが格納されているなら処理を実行しない
-        if (missClip == null || bgmSource.clip == missClip) { return; }
+        // 効果音が設定されていなければ何もしない
+        if (missClip == null)
+        {
+            return;
+        }
 
-        bgmSource.clip = missClip;
-
-        bgmSource.Play();
+        seSource.PlayOneShot(missClip);
 
         Debug.Log("間違えました。");
     }
 
-    public void PlayTrueClickBGM()
+
+    //=============================================================================================
+    // 正解の効果音
+    public void PlayTrueClickSound()
     {
-        // resultBgmClipに何も格納されていない、または既にリザルト用bgmが格納されているなら処理を実行しない
-        if (trueClickClip == null || bgmSource.clip == trueClickClip) { return; }
+        // 効果音が設定されていなければ何もしない
+        if (trueClickClip == null)
+        {
+            return;
+        }
 
-        bgmSource.clip = trueClickClip;
-
-        bgmSource.Play();
+        seSource.PlayOneShot(trueClickClip);
 
         Debug.Log("正解です。");
     }
 }
+
