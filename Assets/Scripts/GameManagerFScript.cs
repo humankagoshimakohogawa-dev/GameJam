@@ -28,7 +28,7 @@ public class GameManagerFScript : MonoBehaviour
         CountMoguras();
 
         // モグラが二匹立ったら、モグラ破棄処理を実行
-        if (standingMoguras[0] != null && standingMoguras[1] != null) { KillMogura(); }
+        if (standingMoguras[0] != null && standingMoguras[1] != null) { Invoke("KillMogura", 2); }
     }
 
     //=============================================================================================
