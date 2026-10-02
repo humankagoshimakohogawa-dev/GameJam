@@ -1,9 +1,10 @@
-
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class BGMManagerScript : MonoBehaviour
 {
+    public static BGMManagerScript Instance { get; private set; }
+
     [Header("BGM")]
     [SerializeField] AudioClip titleBgmClip;
     [SerializeField] AudioClip gameBgmClip;
@@ -15,198 +16,84 @@ public class BGMManagerScript : MonoBehaviour
     [SerializeField] AudioClip missClip;
     [SerializeField] AudioClip trueClickClip;
 
-    // BGMを再生するAudioSource
     AudioSource bgmSource;
-
-    // 効果音を再生するAudioSource
     AudioSource seSource;
 
-
-    //=============================================================================================
     void Awake()
     {
-        // シーンが切り替わってもこのオブジェクトを破棄しない
-        DontDestroyOnLoad(this.gameObject);
+        // シングルトン化（重複防止）
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
 
-        // AudioSourceを取得
         AudioSource[] sources = GetComponents<AudioSource>();
 
-        // 1つ目のAudioSourceをBGM用にする
-        bgmSource = sources.Length > 0
-            ? sources[0]
-            : gameObject.AddComponent<AudioSource>();
+        bgmSource = sources.Length > 0 ? sources[0] : gameObject.AddComponent<AudioSource>();
+        seSource = sources.Length > 1 ? sources[1] : gameObject.AddComponent<AudioSource>();
 
-        // 2つ目のAudioSourceを効果音用にする
-        seSource = sources.Length > 1
-            ? sources[1]
-            : gameObject.AddComponent<AudioSource>();
-
-        // BGMはループする
         bgmSource.loop = true;
+        bgmSource.spatialBlend = 0f; // 2Dサウンド化
 
-        // 効果音はループしない
         seSource.loop = false;
+        seSource.volume = 1.0f;       // 音量100%
+        seSource.spatialBlend = 0f;  // 2Dサウンド化
     }
 
-
-    //=============================================================================================
     void Start()
     {
-        // 現在のシーンがタイトルならタイトルBGMを再生
-        if (SceneManager.GetActiveScene().name == "TitleScene")
-        {
-            PlayTitleBGM();
-        }
+        CheckAndPlaySceneBGM(SceneManager.GetActiveScene().name);
     }
 
-
-    //=============================================================================================
     void Update()
     {
-        // 現在のシーンがゲーム本編ならゲームBGMに切り替える
-        if (SceneManager.GetActiveScene().name == "GameScene")
-        {
-            PlayGameBGM();
-        }
-
-        // 現在のシーンがリザルトならリザルトBGMに切り替える
-        if (SceneManager.GetActiveScene().name == "ResultScene")
-        {
-            PlayResultBGM();
-        }
+        CheckAndPlaySceneBGM(SceneManager.GetActiveScene().name);
     }
 
+    private void CheckAndPlaySceneBGM(string sceneName)
+    {
+        if (sceneName == "TitleScene") PlayTitleBGM();
+        else if (sceneName == "GameScene") PlayGameBGM();
+        else if (sceneName == "ResultScene") PlayResultBGM();
+    }
 
-    //=============================================================================================
-    // タイトル用BGM再生
     public void PlayTitleBGM()
     {
-        // BGMが設定されていなければ何もしない
-        if (titleBgmClip == null)
-        {
-            return;
-        }
-
-        // 既にタイトルBGMなら何もしない
-        if (bgmSource.clip == titleBgmClip)
-        {
-            return;
-        }
-
+        if (titleBgmClip == null || bgmSource.clip == titleBgmClip) return;
         bgmSource.clip = titleBgmClip;
         bgmSource.Play();
-
-        Debug.Log("タイトルBGM再生");
     }
 
-
-    //=============================================================================================
-    // ゲームシーン用BGM再生
     public void PlayGameBGM()
     {
-        // BGMが設定されていなければ何もしない
-        if (gameBgmClip == null)
-        {
-            return;
-        }
-
-        // 既にゲームBGMなら何もしない
-        if (bgmSource.clip == gameBgmClip)
-        {
-            return;
-        }
-
+        if (gameBgmClip == null || bgmSource.clip == gameBgmClip) return;
         bgmSource.clip = gameBgmClip;
         bgmSource.Play();
-
-        Debug.Log("ゲームBGM再生");
     }
 
-
-    //=============================================================================================
-    // リザルトシーン用BGM再生
     public void PlayResultBGM()
     {
-        // BGMが設定されていなければ何もしない
-        if (resultBgmClip == null)
-        {
-            return;
-        }
-
-        // 既にリザルトBGMなら何もしない
-        if (bgmSource.clip == resultBgmClip)
-        {
-            return;
-        }
-
+        if (resultBgmClip == null || bgmSource.clip == resultBgmClip) return;
         bgmSource.clip = resultBgmClip;
         bgmSource.Play();
-
-        Debug.Log("リザルトBGM再生");
     }
 
+    public void PlayClickButtonSound() => PlaySE(clickButtonClip, "ボタンがクリックされました。");
+    public void PlayMoleClickSound() => PlaySE(moleClickClip, "モグラの穴をたたきました。");
+    public void PlayMissSound() => PlaySE(missClip, "間違えました。");
+    public void PlayTrueClickSound() => PlaySE(trueClickClip, "正解です。");
 
-    //=============================================================================================
-    // ボタンを押したときの効果音
-    public void PlayClickButtonSound()
+    private void PlaySE(AudioClip clip, string logMessage)
     {
-        // 効果音が設定されていなければ何もしない
-        if (clickButtonClip == null)
+        if (clip == null)
         {
+            Debug.LogWarning("AudioClipがInspectorでセットされていません！");
             return;
         }
-
-        seSource.PlayOneShot(clickButtonClip);
-
-        Debug.Log("ボタンがクリックされました。");
-    }
-
-
-    //=============================================================================================
-    // モグラを押したときの効果音
-    public void PlayMoleClickSound()
-    {
-        // 効果音が設定されていなければ何もしない
-        if (moleClickClip == null)
-        {
-            return;
-        }
-
-        seSource.PlayOneShot(moleClickClip);
-
-        Debug.Log("モグラの穴をたたきました。");
-    }
-
-
-    //=============================================================================================
-    // 不正解の効果音
-    public void PlayMissSound()
-    {
-        // 効果音が設定されていなければ何もしない
-        if (missClip == null)
-        {
-            return;
-        }
-
-        seSource.PlayOneShot(missClip);
-
-        Debug.Log("間違えました。");
-    }
-
-
-    //=============================================================================================
-    // 正解の効果音
-    public void PlayTrueClickSound()
-    {
-        // 効果音が設定されていなければ何もしない
-        if (trueClickClip == null)
-        {
-            return;
-        }
-
-        seSource.PlayOneShot(trueClickClip);
-
-        Debug.Log("正解です。");
+        seSource.PlayOneShot(clip);
+        Debug.Log(logMessage);
     }
 }
-
