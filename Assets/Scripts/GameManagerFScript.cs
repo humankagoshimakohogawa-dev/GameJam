@@ -28,7 +28,7 @@ public class GameManagerFScript : MonoBehaviour
         CountMoguras();
 
         // モグラが二匹立ったら、モグラ破棄処理を実行
-        if (standingMoguras[0] != null && standingMoguras[1] != null) { Invoke("KillMogura", 2); }
+        if (standingMoguras[0] != null && standingMoguras[1] != null) { Invoke("KillMogura", 1); }
     }
 
     //=============================================================================================
@@ -52,15 +52,15 @@ public class GameManagerFScript : MonoBehaviour
             MoguraStanderScript moguraStanderScript0 = standingMoguras[0].GetComponent<MoguraStanderScript>();
             moguraStanderScript0.isStanding = false;
             moguraStanderScript0.isKilling = true;
-            // 立ちモグラ確認配列内のモグラのオブジェクトを2秒待ってから破棄
-            Destroy(standingMoguras[0].gameObject, 2);
+            // 立ちモグラ確認配列内のモグラのオブジェクトを1秒待ってから破棄
+            Destroy(standingMoguras[0].gameObject, 1);
             // モグラの数を-1
             --mogurasCount;
 
             MoguraStanderScript moguraStanderScript1 = standingMoguras[1].GetComponent<MoguraStanderScript>();
             moguraStanderScript1.isStanding = false;
             moguraStanderScript1.isKilling = true;
-            Destroy(standingMoguras[1].gameObject, 2);
+            Destroy(standingMoguras[1].gameObject, 1);
             --mogurasCount;
 
         }
