@@ -7,26 +7,30 @@ public class BGMManagerScript : MonoBehaviour
     [SerializeField] AudioClip titleBgmClip;
     [SerializeField] AudioClip gameBgmClip;
     [SerializeField] AudioClip resultBgmClip;
+    [SerializeField] AudioClip clickButtonClip;
+    [SerializeField] AudioClip moleClickClip;
+    [SerializeField] AudioClip missClip;
+    [SerializeField] AudioClip trueClickClip;
 
     AudioSource bgmSource;
 
     //=============================================================================================
     void Awake()
     {
-        // ã‚·ãƒ¼ãƒ³ãŒåˆ‡ã‚Šæ›¿ã‚ã£ã¦ã‚‚ã“ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ç ´æ£„ã—ãªã„
+        // ƒV[ƒ“‚ªØ‚è‘Ö‚í‚Á‚Ä‚à‚±‚ÌƒIƒuƒWƒFƒNƒg‚ğ”jŠü‚µ‚È‚¢
         DontDestroyOnLoad(this.gameObject);
 
-        // AudioSourceå‹ã®é…åˆ— sourcesã‚’å®£è¨€
-        // AudioSourceã®å†…å®¹ã‚’å–å¾—ã—ã¦sourcesã«å…¥ã‚Œã‚‹
+        // AudioSourceŒ^‚Ì”z—ñ sources‚ğéŒ¾
+        // AudioSource‚Ì“à—e‚ğæ“¾‚µ‚Äsources‚É“ü‚ê‚é
         AudioSource[] sources = GetComponents<AudioSource>();
 
-        // ä¸‰é …æ¼”ç®—å­
-        // å¤‰æ•°å = æ¡ä»¶å¼ ? trueã ã£ãŸå ´åˆã®å€¤ : falseã ã£ãŸå ´åˆã®å€¤
+        // O€‰‰Zq
+        // •Ï”–¼ = ğŒ® ? true‚¾‚Á‚½ê‡‚Ì’l : false‚¾‚Á‚½ê‡‚Ì’l
 
-        // bgmSourceã«ã€sourcesã®é•·ã•(Length)ãŒ0ã‚ˆã‚Šå¤§ãã„ãªã‚‰sourcesã®0ç•ªã‚’ä¸ãˆã‚‹  ãã†ã§ãªã‘ã‚Œã°ã‚²ãƒ¼ãƒ ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã«AudioSourceã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚’è¿½åŠ 
+        // bgmSource‚ÉAsources‚Ì’·‚³(Length)‚ª0‚æ‚è‘å‚«‚¢‚È‚çsources‚Ì0”Ô‚ğ—^‚¦‚é  ‚»‚¤‚Å‚È‚¯‚ê‚ÎƒQ[ƒ€ƒIƒuƒWƒFƒNƒg‚ÉAudioSource‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg‚ğ’Ç‰Á
         bgmSource = sources.Length > 0 ? sources[0] : gameObject.AddComponent<AudioSource>();
 
-        // bgmã®ãƒ«ãƒ¼ãƒ—å†ç”Ÿã‚’trueã«
+        // bgm‚Ìƒ‹[ƒvÄ¶‚ğtrue‚É
         bgmSource.loop = true;
 
     }
@@ -34,7 +38,7 @@ public class BGMManagerScript : MonoBehaviour
     //=============================================================================================
     void Start()
     {
-        // ç¾åœ¨ã®ã‚·ãƒ¼ãƒ³ãŒã‚¿ã‚¤ãƒˆãƒ«ãªã‚‰ã‚¿ã‚¤ãƒˆãƒ«ç”¨BGMã‚’å†ç”Ÿ
+        // Œ»İ‚ÌƒV[ƒ“‚ªƒ^ƒCƒgƒ‹‚È‚çƒ^ƒCƒgƒ‹—pBGM‚ğÄ¶
         if (SceneManager.GetActiveScene().name == "TitleScene")
         { PlayTitleBGM(); }
 
@@ -43,54 +47,101 @@ public class BGMManagerScript : MonoBehaviour
     //=============================================================================================
     void Update()
     {
-        // ç¾åœ¨ã®ã‚·ãƒ¼ãƒ³ãŒã‚²ãƒ¼ãƒ æœ¬ç·¨ãªã‚‰å†ç”Ÿã™ã‚‹BGMã‚’ã‚²ãƒ¼ãƒ æœ¬ç·¨ç”¨ã«åˆ‡ã‚Šæ›¿ãˆ
+        // Œ»İ‚ÌƒV[ƒ“‚ªƒQ[ƒ€–{•Ò‚È‚çÄ¶‚·‚éBGM‚ğƒQ[ƒ€–{•Ò—p‚ÉØ‚è‘Ö‚¦
         if (SceneManager.GetActiveScene().name == "GameScene")
         { PlayGameBGM(); }
 
-        // ç¾åœ¨ã®ã‚·ãƒ¼ãƒ³ãŒãƒªã‚¶ãƒ«ãƒˆãªã‚‰å†ç”Ÿã™ã‚‹BGMã‚’ãƒªã‚¶ãƒ«ãƒˆç”¨ã«åˆ‡ã‚Šæ›¿ãˆ
+        // Œ»İ‚ÌƒV[ƒ“‚ªƒŠƒUƒ‹ƒg‚È‚çÄ¶‚·‚éBGM‚ğƒŠƒUƒ‹ƒg—p‚ÉØ‚è‘Ö‚¦
         if (SceneManager.GetActiveScene().name == "ResultScene")
         { PlayResultBGM(); }
     }
 
     //=======================================================================================================================
-    // ã‚¿ã‚¤ãƒˆãƒ«ç”¨BGMå†ç”Ÿ
+    // ƒ^ƒCƒgƒ‹—pBGMÄ¶
     public void PlayTitleBGM()
     {
-        // titleBgmClipã«ä½•ã‚‚æ ¼ç´ã•ã‚Œã¦ã„ãªã‹ã£ãŸã‚‰å‡¦ç†ã‚’å®Ÿè¡Œã—ãªã„
+        // titleBgmClip‚É‰½‚àŠi”[‚³‚ê‚Ä‚¢‚È‚©‚Á‚½‚çˆ—‚ğÀs‚µ‚È‚¢
         if (titleBgmClip == null) { return; }
 
         bgmSource.clip = titleBgmClip;
 
         bgmSource.Play();
 
-        Debug.Log("tå†ç”Ÿã—ãŸã©");
+        Debug.Log("ƒ^ƒCƒgƒ‹BGMÄ¶");
     }
 
     //=======================================================================================================================
-    // ã‚²ãƒ¼ãƒ ã‚·ãƒ¼ãƒ³ç”¨BGMå†ç”Ÿ
+    // ƒQ[ƒ€ƒV[ƒ“—pBGMÄ¶
     public void PlayGameBGM()
     {
-        // titleBgmClipã«ä½•ã‚‚æ ¼ç´ã•ã‚Œã¦ã„ãªã„ã€ã¾ãŸã¯æ—¢ã«ã‚²ãƒ¼ãƒ ç”¨bgmãŒæ ¼ç´ã•ã‚Œã¦ã„ã‚‹ãªã‚‰å‡¦ç†ã‚’å®Ÿè¡Œã—ãªã„
+        // titleBgmClip‚É‰½‚àŠi”[‚³‚ê‚Ä‚¢‚È‚¢A‚Ü‚½‚ÍŠù‚ÉƒQ[ƒ€—pbgm‚ªŠi”[‚³‚ê‚Ä‚¢‚é‚È‚çˆ—‚ğÀs‚µ‚È‚¢
         if (gameBgmClip == null || bgmSource.clip == gameBgmClip) { return; }
 
         bgmSource.clip = gameBgmClip;
 
         bgmSource.Play();
 
-        Debug.Log("gå†ç”Ÿã—ãŸã©");
+        Debug.Log("ƒQ[ƒ€BGMÄ¶");
     }
 
     //=======================================================================================================================
-    // ãƒªã‚¶ãƒ«ãƒˆã‚·ãƒ¼ãƒ³ç”¨BGMå†ç”Ÿ
+    // ƒŠƒUƒ‹ƒgƒV[ƒ“—pBGMÄ¶
     public void PlayResultBGM()
     {
-        // resultBgmClipã«ä½•ã‚‚æ ¼ç´ã•ã‚Œã¦ã„ãªã„ã€ã¾ãŸã¯æ—¢ã«ãƒªã‚¶ãƒ«ãƒˆç”¨bgmãŒæ ¼ç´ã•ã‚Œã¦ã„ã‚‹ãªã‚‰å‡¦ç†ã‚’å®Ÿè¡Œã—ãªã„
+        // resultBgmClip‚É‰½‚àŠi”[‚³‚ê‚Ä‚¢‚È‚¢A‚Ü‚½‚ÍŠù‚ÉƒŠƒUƒ‹ƒg—pbgm‚ªŠi”[‚³‚ê‚Ä‚¢‚é‚È‚çˆ—‚ğÀs‚µ‚È‚¢
         if (resultBgmClip == null || bgmSource.clip == resultBgmClip) { return; }
 
         bgmSource.clip = resultBgmClip;
 
         bgmSource.Play();
 
-        Debug.Log("rå†ç”Ÿã—ãŸã©");
+        Debug.Log("ƒŠƒUƒ‹ƒgBGMÄ¶");
+    }
+
+    public void PlayClickButtonBGM()
+    {
+        // resultBgmClip‚É‰½‚àŠi”[‚³‚ê‚Ä‚¢‚È‚¢A‚Ü‚½‚ÍŠù‚ÉƒŠƒUƒ‹ƒg—pbgm‚ªŠi”[‚³‚ê‚Ä‚¢‚é‚È‚çˆ—‚ğÀs‚µ‚È‚¢
+        if (clickButtonClip == null || bgmSource.clip == clickButtonClip) { return; }
+
+        bgmSource.clip = clickButtonClip;
+
+        bgmSource.Play();
+
+        Debug.Log("ƒ{ƒ^ƒ“‚ªƒNƒŠƒbƒN‚³‚ê‚Ü‚µ‚½B");
+    }
+
+    public void PlayMoleClickBGM()
+    {
+        // resultBgmClip‚É‰½‚àŠi”[‚³‚ê‚Ä‚¢‚È‚¢A‚Ü‚½‚ÍŠù‚ÉƒŠƒUƒ‹ƒg—pbgm‚ªŠi”[‚³‚ê‚Ä‚¢‚é‚È‚çˆ—‚ğÀs‚µ‚È‚¢
+        if (moleClickClip == null || bgmSource.clip == moleClickClip) { return; }
+
+        bgmSource.clip = moleClickClip;
+
+        bgmSource.Play();
+
+        Debug.Log("ƒ‚ƒOƒ‰‚ÌŒŠ‚ğ‚½‚½‚«‚Ü‚µ‚½B");
+    }
+    public void PlayMissBGM()
+    {
+        // resultBgmClip‚É‰½‚àŠi”[‚³‚ê‚Ä‚¢‚È‚¢A‚Ü‚½‚ÍŠù‚ÉƒŠƒUƒ‹ƒg—pbgm‚ªŠi”[‚³‚ê‚Ä‚¢‚é‚È‚çˆ—‚ğÀs‚µ‚È‚¢
+        if (missClip == null || bgmSource.clip == missClip) { return; }
+
+        bgmSource.clip = missClip;
+
+        bgmSource.Play();
+
+        Debug.Log("ŠÔˆá‚¦‚Ü‚µ‚½B");
+    }
+
+    public void PlayTrueClickBGM()
+    {
+        // resultBgmClip‚É‰½‚àŠi”[‚³‚ê‚Ä‚¢‚È‚¢A‚Ü‚½‚ÍŠù‚ÉƒŠƒUƒ‹ƒg—pbgm‚ªŠi”[‚³‚ê‚Ä‚¢‚é‚È‚çˆ—‚ğÀs‚µ‚È‚¢
+        if (trueClickClip == null || bgmSource.clip == trueClickClip) { return; }
+
+        bgmSource.clip = trueClickClip;
+
+        bgmSource.Play();
+
+        Debug.Log("³‰ğ‚Å‚·B");
     }
 }

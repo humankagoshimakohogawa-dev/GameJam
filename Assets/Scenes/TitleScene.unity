@@ -273,7 +273,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BGMManagerScript
   titleBgmClip: {fileID: 8300000, guid: 0f5bb5627863c4b46a59c85580bbee0b, type: 3}
   gameBgmClip: {fileID: 8300000, guid: a3ad118c8b3ed714c9433b268dd9d97c, type: 3}
-  resultBgmClip: {fileID: 0}
+  resultBgmClip: {fileID: 8300000, guid: 6fc545d6d0293a64d90caa467234e2ed, type: 3}
+  clickButtonClip: {fileID: 8300000, guid: 6fe997a5f3a007940bde2feaa454b424, type: 3}
+  moleClickClip: {fileID: 8300000, guid: b8fe6a2a600b89742b352fa732030f80, type: 3}
+  missClip: {fileID: 8300000, guid: e5d6b9015df7d414393794ab2959ec00, type: 3}
+  trueClickClip: {fileID: 8300000, guid: a50222a21a2411047885a562eff11682, type: 3}
 --- !u!4 &913484594
 Transform:
   m_ObjectHideFlags: 0
@@ -302,13 +306,13 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 90
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
