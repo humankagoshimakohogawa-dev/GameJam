@@ -32,15 +32,17 @@ public class MoguraStanderScript : MonoBehaviour, IPointerClickHandler
     void Update()
     {
         // 自身の状態とアニメの切り替え条件を同期
-        moguraAnimator.SetBool("isStanding", isStanding);
-        moguraAnimator.SetBool("isKilling", isKilling);
-        moguraAnimator.SetBool("isMiss", isMiss);
+        //moguraAnimator.SetBool("isStanding", isStanding);
+        //moguraAnimator.SetBool("isKilling", isKilling);
+        //moguraAnimator.SetBool("isMiss", isMiss);
     }
 
     //=============================================================================================
     // クリックされたオブジェクトが何か検知
     public void OnPointerClick(PointerEventData eventData)
     {
+        Debug.Log("クリックわよ");
+
         // 今自身が立っていないなら
         if(!isStanding)
         {
