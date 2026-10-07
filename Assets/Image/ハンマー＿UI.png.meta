@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 80acabcb145d42643ad9da939f5f5be0
+=======
+guid: b2f96ae9f1c53764893d3fd1ef3bb4f6
+>>>>>>> 0fe644b (アニメーション作り直し(スケール0.5))
 TextureImporter:
   internalIDToNameTable:
   - first:
