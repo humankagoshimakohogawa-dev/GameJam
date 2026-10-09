@@ -6,9 +6,6 @@ public class GameManagerFScript : MonoBehaviour
     [Header("ゲームクリア条件がそろっているか否か")]
     public bool isGameCleare = false;
 
-    [Header("シーン上のモグラの数を数えるためのリスト")]
-    public List<int> mogurasList = new List<int>();
-
     [Header("シーン上のモグラの数を格納する変数")]
     public int mogurasCount = 0;
 

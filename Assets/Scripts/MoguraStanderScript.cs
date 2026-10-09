@@ -41,8 +41,6 @@ public class MoguraStanderScript : MonoBehaviour, IPointerClickHandler
     // クリックされたオブジェクトが何か検知
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("クリックわよ");
-
         // 今自身が立っていないなら
         if(!isStanding)
         {
@@ -51,14 +49,12 @@ public class MoguraStanderScript : MonoBehaviour, IPointerClickHandler
             {
                 gameManagerScript.standingMoguras[0] = this.gameObject;
                 isStanding = true;
-                Debug.Log("一匹目格納");
             }
             // 空いていなかったら1番へ
             else if (gameManagerScript.standingMoguras[1] == null)
             {
                 gameManagerScript.standingMoguras[1] = this.gameObject;
                 isStanding = true;
-                Debug.Log("二匹目格納");
             }
             // どちらも空いていなかったら何もしない
             else { return; }
