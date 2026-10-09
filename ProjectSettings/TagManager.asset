@@ -2,8 +2,21 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
-  tags: []
+  serializedVersion: 3
+  tags:
+  - card1
+  - mogura0
+  - mogura1
+  - mogura2
+  - mogura3
+  - mogura4
+  - mogura5
+  - mogura6
+  - mogura7
+  - mogura8
+  - mogura9
+  - mogura10
+  - mogura11
   layers:
   - Default
   - TransparentFX
@@ -41,3 +54,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  m_RenderingLayers:
+  - Default
+  m_MigratedRenderPipelines: []
