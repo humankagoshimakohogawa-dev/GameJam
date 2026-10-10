@@ -233,8 +233,8 @@ MonoBehaviour:
   - {fileID: 1099669638636974682, guid: 5554941e8a184764782fd682d5c54392, type: 3}
   - {fileID: 2256232234075359455, guid: b550bfaf7b99c0745a1f42536eb0c579, type: 3}
   - {fileID: 2256232234075359455, guid: b550bfaf7b99c0745a1f42536eb0c579, type: 3}
-  - {fileID: 5372989149380892201, guid: 877d59e6519cecc4a82d7b22338b49af, type: 3}
-  - {fileID: 5372989149380892201, guid: 877d59e6519cecc4a82d7b22338b49af, type: 3}
+  - {fileID: 5372989149380892201, guid: 248ebe39f8b1b1343a225a345a6de904, type: 3}
+  - {fileID: 3283553553909521012, guid: e5e705f4a1ec0fe458cdd2b159539355, type: 3}
   points:
   - {fileID: 1428677720}
   - {fileID: 1071836759}
@@ -582,7 +582,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManagerFScript
   isGameCleare: 0
-  mogurasList: 
   mogurasCount: 0
   standingMoguras:
   - {fileID: 0}
