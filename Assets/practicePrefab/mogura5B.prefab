@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 199688d4c4baeb949a52a40312a4a1bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoguraStanderScript
-  moguraAnimator: {fileID: 7529985514744126561, guid: c079ae0c88bc5f347bee0b08a92f5a8a, type: 3}
+  moguraAnimator: {fileID: -5331459502357313740}
   isStanding: 0
   isKilling: 0
   isMiss: 0
