@@ -42,33 +42,39 @@ public class GameManagerFScript : MonoBehaviour
     //=============================================================================================
     void KillMogura()
     {
-        // 立っているモグラがお互いに同じタグを持っていたら
-        if (standingMoguras[0].gameObject.tag == standingMoguras[1].gameObject.tag)
+
+        if (standingMoguras[0] != null && standingMoguras[1] != null)
         {
-            // モグラのスクリプトを参照し、立ちフラグはfalseに、撃退フラグはtrueに
-            MoguraStanderScript moguraStanderScript0 = standingMoguras[0].GetComponent<MoguraStanderScript>();
-            moguraStanderScript0.isKilling = true;
-            // 立ちモグラ確認配列内のモグラのオブジェクトを1秒待ってから破棄
-            Destroy(standingMoguras[0].gameObject, 1);
-            // モグラの数を-1
-            --mogurasCount;
+            // 立っているモグラがお互いに同じタグを持っていたら
+            if (standingMoguras[0].gameObject.tag == standingMoguras[1].gameObject.tag)
+            {
+                // モグラのスクリプトを参照し、撃退フラグをtrueに
+                MoguraStanderScript moguraStanderScript0 = standingMoguras[0].GetComponent<MoguraStanderScript>();
+                moguraStanderScript0.isKilling = true;
+                // 立ちモグラ確認配列内のモグラのオブジェクトを1秒待ってから破棄
+                Destroy(standingMoguras[0].gameObject, 1);
+                // モグラの数を-1
+                --mogurasCount;
 
-            MoguraStanderScript moguraStanderScript1 = standingMoguras[1].GetComponent<MoguraStanderScript>();
-            moguraStanderScript1.isKilling = true;
-            Destroy(standingMoguras[1].gameObject, 1);
-            --mogurasCount;
+                MoguraStanderScript moguraStanderScript1 = standingMoguras[1].GetComponent<MoguraStanderScript>();
+                moguraStanderScript1.isKilling = true;
+                Destroy(standingMoguras[1].gameObject, 1);
+                --mogurasCount;
 
+            }
+            else if (standingMoguras[0].gameObject.tag != standingMoguras[1].gameObject.tag)
+            {
+                // そうでなければ立ちフラグをfalseにし、立ちモグラ確認配列も再び空に
+                MoguraStanderScript moguraStanderScript0 = standingMoguras[0].GetComponent<MoguraStanderScript>();
+                moguraStanderScript0.isStanding = false;
+                standingMoguras[0] = null;
+
+                MoguraStanderScript moguraStanderScript1 = standingMoguras[1].GetComponent<MoguraStanderScript>();
+                moguraStanderScript1.isStanding = false;
+                standingMoguras[1] = null;
+            }
         }
-        else if (standingMoguras[0].gameObject.tag != standingMoguras[1].gameObject.tag)
-        {
-            // そうでなければフラグをfalseにし、立ちモグラ確認配列も再び空に
-            MoguraStanderScript moguraStanderScript0 = standingMoguras[0].GetComponent<MoguraStanderScript>();
-            moguraStanderScript0.isStanding = false;
-            standingMoguras[0] = null;
 
-            MoguraStanderScript moguraStanderScript1 = standingMoguras[1].GetComponent<MoguraStanderScript>();
-            moguraStanderScript1.isStanding = false;
-            standingMoguras[1] = null;
-        }
     }
+
 }
