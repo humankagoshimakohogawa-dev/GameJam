@@ -47,7 +47,6 @@ public class GameManagerFScript : MonoBehaviour
         {
             // モグラのスクリプトを参照し、立ちフラグはfalseに、撃退フラグはtrueに
             MoguraStanderScript moguraStanderScript0 = standingMoguras[0].GetComponent<MoguraStanderScript>();
-            moguraStanderScript0.isStanding = false;
             moguraStanderScript0.isKilling = true;
             // 立ちモグラ確認配列内のモグラのオブジェクトを1秒待ってから破棄
             Destroy(standingMoguras[0].gameObject, 1);
@@ -55,7 +54,6 @@ public class GameManagerFScript : MonoBehaviour
             --mogurasCount;
 
             MoguraStanderScript moguraStanderScript1 = standingMoguras[1].GetComponent<MoguraStanderScript>();
-            moguraStanderScript1.isStanding = false;
             moguraStanderScript1.isKilling = true;
             Destroy(standingMoguras[1].gameObject, 1);
             --mogurasCount;
