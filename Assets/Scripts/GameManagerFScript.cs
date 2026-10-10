@@ -66,12 +66,10 @@ public class GameManagerFScript : MonoBehaviour
             // そうでなければフラグをfalseにし、立ちモグラ確認配列も再び空に
             MoguraStanderScript moguraStanderScript0 = standingMoguras[0].GetComponent<MoguraStanderScript>();
             moguraStanderScript0.isStanding = false;
-            moguraStanderScript0.isMiss = true;
             standingMoguras[0] = null;
 
             MoguraStanderScript moguraStanderScript1 = standingMoguras[1].GetComponent<MoguraStanderScript>();
             moguraStanderScript1.isStanding = false;
-            moguraStanderScript1.isMiss = true;
             standingMoguras[1] = null;
         }
     }

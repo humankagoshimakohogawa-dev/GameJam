@@ -15,9 +15,6 @@ public class MoguraStanderScript : MonoBehaviour, IPointerClickHandler
     // 自身の撃退が成功したかどうか
     public bool isKilling = false;
 
-    // 自身の撃退が失敗したかどうか
-    public bool isMiss = false;
-
     //=============================================================================================
     void Start()
     {
@@ -34,7 +31,6 @@ public class MoguraStanderScript : MonoBehaviour, IPointerClickHandler
         // 自身の状態とアニメの切り替え条件を同期
         moguraAnimator.SetBool("isStanding", isStanding);
         moguraAnimator.SetBool("isKilling", isKilling);
-        moguraAnimator.SetBool("isMiss", isMiss);
     }
 
     //=============================================================================================
