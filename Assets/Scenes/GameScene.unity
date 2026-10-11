@@ -535,6 +535,7 @@ GameObject:
   - component: {fileID: 565666973}
   - component: {fileID: 565666972}
   - component: {fileID: 565666974}
+  - component: {fileID: 565666975}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -586,6 +587,19 @@ MonoBehaviour:
   standingMoguras:
   - {fileID: 0}
   - {fileID: 0}
+--- !u!114 &565666975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 565666971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24d3da1eead6fe14da695564ddf11868, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Button
+  GMF: {fileID: 0}
 --- !u!1 &584109491
 GameObject:
   m_ObjectHideFlags: 0

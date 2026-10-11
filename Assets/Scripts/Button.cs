@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class Button : MonoBehaviour
 {
+    public GameManagerFScript GMF;
     // ゲーム開始
     public void StartGame()
     {
@@ -21,6 +22,16 @@ public class Button : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("ruleScene");
+    }
+
+    //リザルトへ移行
+    public void ToResult()
+    {
+        if (GMF.isGameCleare)
+        {
+            SceneManager.LoadScene("ResultScene");
+        }
+
     }
 
     // タイトルに戻る
