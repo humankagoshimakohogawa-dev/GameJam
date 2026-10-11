@@ -1,15 +1,16 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManagerFScript : MonoBehaviour
 {
-    [Header("ã‚²ãƒ¼ãƒ ã‚¯ãƒªã‚¢æ¡ä»¶ãŒãã‚ã£ã¦ã„ã‚‹ã‹å¦ã‹")]
+    [Header("ƒQ[ƒ€ƒNƒŠƒAğŒ‚ª‚»‚ë‚Á‚Ä‚¢‚é‚©”Û‚©")]
     public bool isGameCleare = false;
 
-    [Header("ã‚·ãƒ¼ãƒ³ä¸Šã®ãƒ¢ã‚°ãƒ©ã®æ•°ã‚’æ ¼ç´ã™ã‚‹å¤‰æ•°")]
+    [Header("ƒV[ƒ“ã‚Ìƒ‚ƒOƒ‰‚Ì”‚ğŠi”[‚·‚é•Ï”")]
     public int mogurasCount = 0;
 
-    [Header("ç¾åœ¨ç«‹ã£ã¦ã„ã‚‹ãƒ¢ã‚°ãƒ©ã‚’æ ¼ç´")]
+    [Header("Œ»İ—§‚Á‚Ä‚¢‚éƒ‚ƒOƒ‰‚ğŠi”[")]
     public GameObject[] standingMoguras = new GameObject[2];
 
     //=============================================================================================
@@ -21,20 +22,28 @@ public class GameManagerFScript : MonoBehaviour
     //=============================================================================================
     void Update()
     {
-        // ã‚·ãƒ¼ãƒ³ä¸Šã®ãƒ¢ã‚°ãƒ©ã®æ•°ã‚’æ•°ãˆã‚‹
+        // ƒV[ƒ“ã‚Ìƒ‚ƒOƒ‰‚Ì”‚ğ”‚¦‚é
         CountMoguras();
 
-        // ãƒ¢ã‚°ãƒ©ãŒäºŒåŒ¹ç«‹ã£ãŸã‚‰ã€ãƒ¢ã‚°ãƒ©ç ´æ£„å‡¦ç†ã‚’å®Ÿè¡Œ
+        // ƒ‚ƒOƒ‰‚ª“ñ•C—§‚Á‚½‚çAƒ‚ƒOƒ‰”jŠüˆ—‚ğÀs
         if (standingMoguras[0] != null && standingMoguras[1] != null) { Invoke("KillMogura", 1); }
+
+        //ƒQ[ƒ€‚ªƒNƒŠƒA‚µ‚½‚ç2•bŒã‚ÉƒŠƒUƒ‹ƒgƒV[ƒ“‚É‘JˆÚ
+        if (isGameCleare == true) 
+        {
+            Invoke("ToResult", 2.0f);
+            Debug.Log("ToResult");
+        }
     }
 
     //=============================================================================================
     void CountMoguras()
     {
-        // æ•°ãŒ0ã«ãªã£ãŸã‚‰ã‚²ãƒ¼ãƒ ã‚¯ãƒªã‚¢åˆ¤å®šã‚’trueã«
+        // ”‚ª0‚É‚È‚Á‚½‚çƒQ[ƒ€ƒNƒŠƒA”»’è‚ğtrue‚É
         if (mogurasCount == 0)
         {
             isGameCleare = true;
+            Debug.Log("clear");
         }
         
     }
@@ -45,15 +54,15 @@ public class GameManagerFScript : MonoBehaviour
 
         if (standingMoguras[0] != null && standingMoguras[1] != null)
         {
-            // ç«‹ã£ã¦ã„ã‚‹ãƒ¢ã‚°ãƒ©ãŒãŠäº’ã„ã«åŒã˜ã‚¿ã‚°ã‚’æŒã£ã¦ã„ãŸã‚‰
+            // —§‚Á‚Ä‚¢‚éƒ‚ƒOƒ‰‚ª‚¨Œİ‚¢‚É“¯‚¶ƒ^ƒO‚ğ‚Á‚Ä‚¢‚½‚ç
             if (standingMoguras[0].gameObject.tag == standingMoguras[1].gameObject.tag)
             {
-                // ãƒ¢ã‚°ãƒ©ã®ã‚¹ã‚¯ãƒªãƒ—ãƒˆã‚’å‚ç…§ã—ã€æ’ƒé€€ãƒ•ãƒ©ã‚°ã‚’trueã«
+                // ƒ‚ƒOƒ‰‚ÌƒXƒNƒŠƒvƒg‚ğQÆ‚µAŒ‚‘Şƒtƒ‰ƒO‚ğtrue‚É
                 MoguraStanderScript moguraStanderScript0 = standingMoguras[0].GetComponent<MoguraStanderScript>();
                 moguraStanderScript0.isKilling = true;
-                // ç«‹ã¡ãƒ¢ã‚°ãƒ©ç¢ºèªé…åˆ—å†…ã®ãƒ¢ã‚°ãƒ©ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’1ç§’å¾…ã£ã¦ã‹ã‚‰ç ´æ£„
+                // —§‚¿ƒ‚ƒOƒ‰Šm”F”z—ñ“à‚Ìƒ‚ƒOƒ‰‚ÌƒIƒuƒWƒFƒNƒg‚ğ1•b‘Ò‚Á‚Ä‚©‚ç”jŠü
                 Destroy(standingMoguras[0].gameObject, 1);
-                // ãƒ¢ã‚°ãƒ©ã®æ•°ã‚’-1
+                // ƒ‚ƒOƒ‰‚Ì”‚ğ-1
                 --mogurasCount;
 
                 MoguraStanderScript moguraStanderScript1 = standingMoguras[1].GetComponent<MoguraStanderScript>();
@@ -64,7 +73,7 @@ public class GameManagerFScript : MonoBehaviour
             }
             else if (standingMoguras[0].gameObject.tag != standingMoguras[1].gameObject.tag)
             {
-                // ãã†ã§ãªã‘ã‚Œã°ç«‹ã¡ãƒ•ãƒ©ã‚°ã‚’falseã«ã—ã€ç«‹ã¡ãƒ¢ã‚°ãƒ©ç¢ºèªé…åˆ—ã‚‚å†ã³ç©ºã«
+                // ‚»‚¤‚Å‚È‚¯‚ê‚Î—§‚¿ƒtƒ‰ƒO‚ğfalse‚É‚µA—§‚¿ƒ‚ƒOƒ‰Šm”F”z—ñ‚àÄ‚Ñ‹ó‚É
                 MoguraStanderScript moguraStanderScript0 = standingMoguras[0].GetComponent<MoguraStanderScript>();
                 moguraStanderScript0.isStanding = false;
                 standingMoguras[0] = null;
@@ -75,6 +84,11 @@ public class GameManagerFScript : MonoBehaviour
             }
         }
 
+    }
+
+    void ToResult()
+    {
+        SceneManager.LoadScene("ResultScene");
     }
 
 }
