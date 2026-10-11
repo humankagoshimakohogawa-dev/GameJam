@@ -30,6 +30,6 @@ public class GameTimer : MonoBehaviour
             return;
         }
 
-        timeText.text = "TIME : " + elapsedTime.ToString("F2");
+        timeText.text = "Œo‰ßŽžŠÔ : " + elapsedTime.ToString("F2");
     }
 }
