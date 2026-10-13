@@ -730,8 +730,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7877d8c6ff8188847a2806b5d4637d1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManagerFScript
+  mogurasCount: 24
   isGameCleare: 0
-  mogurasCount: 0
   standingMoguras:
   - {fileID: 0}
   - {fileID: 0}
