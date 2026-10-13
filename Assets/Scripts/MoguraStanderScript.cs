@@ -3,56 +3,56 @@ using UnityEngine.EventSystems;
 
 public class MoguraStanderScript : MonoBehaviour, IPointerClickHandler
 {
-    [Header("ä½¿ç”¨ã™ã‚‹ã‚¢ãƒ‹ãƒ¡ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ©ãƒ¼")]
+    [Header("g—p‚·‚éƒAƒjƒƒRƒ“ƒgƒ[ƒ‰[")]
     public Animator moguraAnimator;
 
     GameObject gameManager;
     GameManagerFScript gameManagerScript;
 
-    // è‡ªèº«ãŒç¾åœ¨ç«‹ã£ã¦ã„ã‚‹ã‹ã©ã†ã‹
+    // ©g‚ªŒ»İ—§‚Á‚Ä‚¢‚é‚©‚Ç‚¤‚©
     public bool isStanding = false;
 
-    // è‡ªèº«ã®æ’ƒé€€ãŒæˆåŠŸã—ãŸã‹ã©ã†ã‹
+    // ©g‚ÌŒ‚‘Ş‚ª¬Œ÷‚µ‚½‚©‚Ç‚¤‚©
     public bool isKilling = false;
 
     //=============================================================================================
     void Start()
     {
-        // ã‚²ãƒ¼ãƒ ãƒãƒãƒ¼ã‚¸ãƒ£ãƒ¼ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å–å¾—
+        // ƒQ[ƒ€ƒ}ƒl[ƒWƒƒ[‚ÌƒIƒuƒWƒFƒNƒg‚ğæ“¾
         gameManager = GameObject.Find("GameManager");
 
-        // æ‰€å¾—ã—ãŸã‚²ãƒ¼ãƒ ãƒãƒãƒ¼ã‚¸ãƒ£ãƒ¼ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®æŒã¤ã‚¹ã‚¯ãƒªãƒ—ãƒˆã‚’å‚ç…§ã—ã¦å–å¾—
+        // Š“¾‚µ‚½ƒQ[ƒ€ƒ}ƒl[ƒWƒƒ[ƒIƒuƒWƒFƒNƒg‚Ì‚ÂƒXƒNƒŠƒvƒg‚ğQÆ‚µ‚Äæ“¾
         gameManagerScript = gameManager.GetComponent<GameManagerFScript>();
     }
 
     //=============================================================================================
     void Update()
     {
-        // è‡ªèº«ã®çŠ¶æ…‹ã¨ã‚¢ãƒ‹ãƒ¡ã®åˆ‡ã‚Šæ›¿ãˆæ¡ä»¶ã‚’åŒæœŸ
+        // ©g‚Ìó‘Ô‚ÆƒAƒjƒ‚ÌØ‚è‘Ö‚¦ğŒ‚ğ“¯Šú
         moguraAnimator.SetBool("isStanding", isStanding);
         moguraAnimator.SetBool("isKilling", isKilling);
     }
 
     //=============================================================================================
-    // ã‚¯ãƒªãƒƒã‚¯ã•ã‚ŒãŸã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒä½•ã‹æ¤œçŸ¥
+    // ƒNƒŠƒbƒN‚³‚ê‚½ƒIƒuƒWƒFƒNƒg‚ª‰½‚©ŒŸ’m
     public void OnPointerClick(PointerEventData eventData)
     {
-        // ä»Šè‡ªèº«ãŒç«‹ã£ã¦ã„ãªã„ãªã‚‰
+        // ¡©g‚ª—§‚Á‚Ä‚¢‚È‚¢‚È‚ç
         if(!isStanding)
         {
-            // 0ç•ªãŒç©ºã„ã¦ã„ã‚‹ãªã‚‰0ç•ªã¸
+            // 0”Ô‚ª‹ó‚¢‚Ä‚¢‚é‚È‚ç0”Ô‚Ö
             if (gameManagerScript.standingMoguras[0] == null)
             {
                 gameManagerScript.standingMoguras[0] = this.gameObject;
                 isStanding = true;
             }
-            // ç©ºã„ã¦ã„ãªã‹ã£ãŸã‚‰1ç•ªã¸
+            // ‹ó‚¢‚Ä‚¢‚È‚©‚Á‚½‚ç1”Ô‚Ö
             else if (gameManagerScript.standingMoguras[1] == null)
             {
                 gameManagerScript.standingMoguras[1] = this.gameObject;
                 isStanding = true;
             }
-            // ã©ã¡ã‚‰ã‚‚ç©ºã„ã¦ã„ãªã‹ã£ãŸã‚‰ä½•ã‚‚ã—ãªã„
+            // ‚Ç‚¿‚ç‚à‹ó‚¢‚Ä‚¢‚È‚©‚Á‚½‚ç‰½‚à‚µ‚È‚¢
             else { return; }
         }
     }
