@@ -56,7 +56,7 @@ public class ResultManager : MonoBehaviour
         PlayerPrefs.Save();
 
         // 今回の記録とランキングを文字列にする
-        string resultText = "今回のクリア時間\n"
+        string resultText = "クリア時間\n"
             + nowScore.ToString("F2") + "秒\n\n"
             + "ベストタイムランキング\n";
 
@@ -64,12 +64,12 @@ public class ResultManager : MonoBehaviour
         {
             if (bestScore[i] > 0)
             {
-                resultText += (i + 1) + "位 : "
+                resultText += (i + 1) + " : "
                     + bestScore[i].ToString("F2") + "秒\n";
             }
             else
             {
-                resultText += (i + 1) + "位 : ---\n";
+                resultText += (i + 1) + " : ---\n";
             }
         }
 

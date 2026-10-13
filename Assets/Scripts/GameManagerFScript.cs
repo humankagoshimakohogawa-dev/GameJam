@@ -28,10 +28,10 @@ public class GameManagerFScript : MonoBehaviour
         // モグラが二匹立ったら、モグラ破棄処理を実行
         if (standingMoguras[0] != null && standingMoguras[1] != null) { Invoke("KillMogura", 1); }
 
-        //ゲームがクリアしたら2秒後にリザルトシーンに遷移
+        //ゲームがクリアしたら1秒後にリザルトシーンに遷移
         if (isGameCleare == true) 
         {
-            Invoke("ToResult", 2.0f);
+            Invoke("ToResult", 1.0f);
             Debug.Log("ToResult");
         }
     }
