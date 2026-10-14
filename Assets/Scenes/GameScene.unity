@@ -1580,6 +1580,57 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1045669500}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
+=======
+--- !u!1 &1302316162
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1302316164}
+  - component: {fileID: 1302316163}
+  m_Layer: 0
+  m_Name: EnemyJudgeScript
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1302316163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302316162}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 409b7e4513fea41418e1fe9371375cb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyJudgeScript
+  imgBack: {fileID: 0}
+  imgFront: {fileID: 0}
+  gm: {fileID: 0}
+  pairId: 0
+--- !u!4 &1302316164
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302316162}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.6578369, y: 0.6104126, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> GameJam/master
 --- !u!1 &1334583888
 GameObject:
   m_ObjectHideFlags: 0
@@ -1990,5 +2041,13 @@ SceneRoots:
   - {fileID: 565666973}
   - {fileID: 915559503}
   - {fileID: 439149801}
+<<<<<<< HEAD
   - {fileID: 278039967}
   - {fileID: 1045669500}
+=======
+  - {fileID: 1045669500}
+  - {fileID: 278039967}
+  - {fileID: 565666973}
+  - {fileID: 768681579}
+  - {fileID: 1302316164}
+>>>>>>> GameJam/master
