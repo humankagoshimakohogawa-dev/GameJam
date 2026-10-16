@@ -17,6 +17,7 @@ TagManager:
   - mogura9
   - mogura10
   - mogura11
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -51,6 +52,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Mogura
+    uniqueID: 555880565
+    locked: 0
+  - name: BackGround
+    uniqueID: 940733443
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

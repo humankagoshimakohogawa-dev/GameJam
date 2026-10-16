@@ -73,7 +73,7 @@ public class MoguraInstantiateScript : MonoBehaviour
                 new Vector3(
                     points[i].transform.position.x + Random.Range(-difference_x, difference_x),
                     points[i].transform.position.y + Random.Range(-difference_x, difference_y),
-                    0
+                    points[i].transform.position.z
                     ),
                 transform.rotation
                     );
